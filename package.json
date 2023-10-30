@@ -1,0 +1,31 @@
+{
+  "name": "cloudfront-test",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": [
+    "./index.ts"
+  ],
+  "scripts": {
+    "start": "ts-node-esm ./index.ts"
+  },
+  "author": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "p-queue": "^7.4.1",
+    "ts-node": "^10.9.1"
+  },
+  "volta": {
+    "node": "18.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "typescript": "^5.2.2"
+  },
+  "compilerOptions": {
+    "module": "ESNext"
+  },
+  "ts-node": {
+    "esm": true
+  }
+}
