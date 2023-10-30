@@ -4,6 +4,7 @@ import PQueue from 'p-queue'
 async function main() {
 	let httpErrors = 0
 	let exceptions = 0
+	let requests = 0
 	const url = 'https://d13rq7hk26p07j.cloudfront.net/1almond.log'
 	console.log(`Test URL: ${url}`)
 
@@ -20,6 +21,8 @@ async function main() {
 			} catch (err) {
 				console.error(err)
 				exceptions++
+			} finally {
+				requests++
 			}
 		}
 		queue.add(fn)
@@ -28,7 +31,7 @@ async function main() {
 
 	const endTs = new Date()
 	console.log(`Finished in ${endTs.getTime() - startTs.getTime()}ms`)
-	console.log(`httpErrors: ${httpErrors}, exceptions: ${exceptions}`)
+	console.log(`http errors: ${httpErrors}, exceptions: ${exceptions}, total requests: ${requests}`)
 }
 
 main()
