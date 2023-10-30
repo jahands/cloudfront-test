@@ -10,7 +10,7 @@ async function main() {
 
 	const startTs = new Date()
 	const queue = new PQueue({ concurrency: 500 })
-	for (let i = 0; i < 5000; i++) {
+	for (let i = 0; i < 7000; i++) {
 		const fn = async () => {
 			try {
 				const res = await fetch(`${url}`)
