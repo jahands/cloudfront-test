@@ -14,9 +14,6 @@
     "node-fetch": "^3.3.2",
     "p-queue": "^7.4.1"
   },
-  "volta": {
-    "node": "18.18.2"
-  },
   "devDependencies": {
     "@types/node": "^20.8.9",
     "typescript": "^5.2.2"
@@ -26,5 +23,8 @@
   },
   "ts-node": {
     "esm": true
+  },
+  "volta": {
+    "node": "20.9.0"
   }
 }
