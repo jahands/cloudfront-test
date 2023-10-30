@@ -5,6 +5,7 @@ async function main() {
 	let httpErrors = 0
 	let exceptions = 0
 	const url = 'https://d13rq7hk26p07j.cloudfront.net/1almond.log'
+	console.log(`Test URL: ${url}`)
 
 	const startTs = new Date()
 	const queue = new PQueue({ concurrency: 500 })
