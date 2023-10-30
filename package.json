@@ -7,13 +7,12 @@
     "./index.ts"
   ],
   "scripts": {
-    "start": "ts-node-esm ./index.ts"
+    "start": "npx tsc && node ./index.js"
   },
   "author": "",
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "p-queue": "^7.4.1",
-    "ts-node": "^10.9.1"
+    "p-queue": "^7.4.1"
   },
   "volta": {
     "node": "18.18.2"
