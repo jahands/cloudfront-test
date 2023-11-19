@@ -6,6 +6,7 @@ async function main() {
 	let exceptions = 0
 	let requests = 0
 	const url = process.env.TEST_URL ?? 'https://d13rq7hk26p07j.cloudfront.net/1almond.log'
+	console.log(`Node version: ${process.version}`)
 	console.log(`Test URL: ${url}`)
 
 	const startTs = new Date()
