@@ -5,7 +5,7 @@ async function main() {
 	let httpErrors = 0
 	let exceptions = 0
 	let requests = 0
-	const url = 'https://d13rq7hk26p07j.cloudfront.net/1almond.log'
+	const url = process.env.TEST_URL ?? 'https://d13rq7hk26p07j.cloudfront.net/1almond.log'
 	console.log(`Test URL: ${url}`)
 
 	const startTs = new Date()
