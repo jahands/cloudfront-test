@@ -1,4 +1,5 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
+import { fetch } from 'undici'
 import PQueue from 'p-queue'
 
 async function main() {
