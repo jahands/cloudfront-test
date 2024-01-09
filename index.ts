@@ -11,8 +11,8 @@ async function main() {
 	console.log(`Test URL: ${url}`)
 
 	const startTs = new Date()
-	const queue = new PQueue({ concurrency: 500 })
-	for (let i = 0; i < 15000; i++) {
+	const queue = new PQueue({ concurrency: 1500 })
+	for (let i = 0; i < 2000; i++) {
 		const fn = async () => {
 			try {
 				const res = await fetch(`${url}`)
