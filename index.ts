@@ -17,9 +17,9 @@ async function main() {
 			try {
 				const res = await fetch(`${url}`, {
 					headers: {
-						'CF-Access-Client-Id': process.env.CF_ACCESS_CLIENT_ID,
-						'CF-Access-Client-Secret': process.env.CF_ACCESS_CLIENT_SECRET
-					}
+						'CF-Access-Client-Id': process.env.CF_ACCESS_CLIENT_ID || '',
+						'CF-Access-Client-Secret': process.env.CF_ACCESS_CLIENT_SECRET || '',
+					},
 				})
 				await res.arrayBuffer()
 				if (!res.ok) {
