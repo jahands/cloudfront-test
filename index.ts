@@ -1,7 +1,7 @@
 // import fetch from 'node-fetch'
 import { fetch, setGlobalDispatcher, Agent } from 'undici'
 import PQueue from 'p-queue'
-setGlobalDispatcher(new Agent({ connect: { timeout: 20_000, keepAlive: true } }))
+setGlobalDispatcher(new Agent({ connect: { keepAlive: true } }))
 
 async function main() {
 	let httpErrors = 0
@@ -40,6 +40,9 @@ async function main() {
 	const endTs = new Date()
 	console.log(`Finished in ${endTs.getTime() - startTs.getTime()}ms`)
 	console.log(`http errors: ${httpErrors}, exceptions: ${exceptions}, total requests: ${requests}`)
+	if (httpErrors > 0 || exceptions > 0) {
+		throw new Error('failed')
+	}
 }
 
 main()
