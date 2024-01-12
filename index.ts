@@ -1,7 +1,7 @@
 // import fetch from 'node-fetch'
 import { fetch, setGlobalDispatcher, Agent } from 'undici'
 import PQueue from 'p-queue'
-// setGlobalDispatcher(new Agent({ connect: { keepAlive: true } }))
+setGlobalDispatcher(new Agent({ connect: { keepAlive: true } }))
 
 async function main() {
 	let httpErrors = 0
@@ -12,7 +12,7 @@ async function main() {
 	console.log(`Test URL: ${url}`)
 
 	const startTs = new Date()
-	const queue = new PQueue({ concurrency: 500 })
+	const queue = new PQueue({ concurrency: 800 })
 	for (let i = 0; i < 7000; i++) {
 		const fn = async () => {
 			try {
