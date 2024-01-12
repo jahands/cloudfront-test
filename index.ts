@@ -1,6 +1,7 @@
 // import fetch from 'node-fetch'
-import { fetch } from 'undici'
+import { fetch, setGlobalDispatcher, Agent } from 'undici'
 import PQueue from 'p-queue'
+setGlobalDispatcher(new Agent({ connect: { timeout: 20_000 } }))
 
 async function main() {
 	let httpErrors = 0
