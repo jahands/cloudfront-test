@@ -1,5 +1,5 @@
-// import fetch from 'node-fetch'
-import { fetch } from 'undici'
+import fetch from 'node-fetch'
+// import { fetch } from 'undici'
 import PQueue from 'p-queue'
 
 async function main() {
@@ -16,10 +16,10 @@ async function main() {
 		const fn = async () => {
 			try {
 				const res = await fetch(`${url}`, {
-					headers: {
-						'CF-Access-Client-Id': process.env.CF_ACCESS_CLIENT_ID || '',
-						'CF-Access-Client-Secret': process.env.CF_ACCESS_CLIENT_SECRET || '',
-					},
+					// headers: {
+					// 	'CF-Access-Client-Id': process.env.CF_ACCESS_CLIENT_ID || '',
+					// 	'CF-Access-Client-Secret': process.env.CF_ACCESS_CLIENT_SECRET || '',
+					// },
 				})
 				await res.arrayBuffer()
 				if (!res.ok) {
